@@ -47,7 +47,7 @@ class CameraStaticTfPublisher(Node):
 
         # [이게 핵심] Z-앞(카메라 데이터)을 X-앞(ROS 표준)으로 매핑하는 고정 회전
         # 사용자님이 수동으로 하려던 '축 맞추기'를 ROS 표준에 맞게 선언하는 겁니다.
-        q_opt = tf_transformations.quaternion_from_euler(1.5708, -1.5708, 0) # R:-90, P:0, Y:-90
+        q_opt = tf_transformations.quaternion_from_euler(0, 0, -math.pi) # R:-90, P:0, Y:-90
         opt.transform.rotation.x = q_opt[0]
         opt.transform.rotation.y = q_opt[1]
         opt.transform.rotation.z = q_opt[2]
